@@ -6,5 +6,6 @@ int main(){
     show_vec(vec);
     std::cout << "--------------\n";
     bubble(vec);
+    selection(vec);
     return 0;
 }
