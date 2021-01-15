@@ -7,5 +7,6 @@ int main(){
     std::cout << "--------------\n";
     bubble(vec);
     selection(vec);
+    insertion(vec);
     return 0;
 }

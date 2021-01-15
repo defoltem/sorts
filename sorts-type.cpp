@@ -38,3 +38,37 @@ void selection(std::vector<int> vec){
     }
     show_vec(vec);
 }
+void insertion(std::vector<int> vec){
+    std::vector<int>::iterator it1 = vec.begin();
+    std::vector<int>::iterator it2 = vec.begin()+1;
+    std::cout << "insertion sort: ";
+    size_t lenght = vec.size();
+    bool isequal = false;
+    size_t idx = 1;
+    for (size_t i = 0; i < lenght; i++){
+        if (idx == lenght) break;
+        for (size_t j = 0; j < lenght; j++){
+            if (idx == lenght) break;
+                while (it1 != it2){
+                    if (*it1 > *it2) { 
+                        isequal = false;
+                        break;
+                    }
+                    else ++it1;
+                }
+                if(!isequal) { 
+                vec.emplace(it1, *it2);
+                it1 = vec.begin();
+                it2 = vec.begin()+idx;
+                vec.erase(it2+1);
+                it2 = vec.begin()+idx;
+                isequal = true;
+                } else {
+                    it1 = vec.begin();
+                    it2++;
+                    idx++;
+                }
+        }
+    }
+    show_vec(vec);
+}
