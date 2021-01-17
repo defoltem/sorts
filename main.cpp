@@ -8,5 +8,6 @@ int main(){
     bubble(vec);
     selection(vec);
     insertion(vec);
+    gnome(vec);
     return 0;
 }

@@ -72,3 +72,18 @@ void insertion(std::vector<int> vec){
     }
     show_vec(vec);
 }
+
+void gnome(std::vector<int> vec){
+    std::cout << "gnome sort: ";
+    size_t lenght = vec.size();
+    int i = 0;
+    while (i < lenght){
+        if (i == 0) i++; 
+        else if (vec.at(i) >= vec.at(i-1)) i++;
+        else if (vec.at(i) < vec.at(i-1)){
+            std::swap(vec.at(i), vec.at(i-1));
+            i--;
+        }
+    }
+    show_vec(vec);
+}
