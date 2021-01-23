@@ -76,7 +76,7 @@ void insertion(std::vector<int> vec){
 void gnome(std::vector<int> vec){
     std::cout << "gnome sort: ";
     size_t lenght = vec.size();
-    int i = 0;
+    size_t i = 0;
     while (i < lenght){
         if (i == 0) i++; 
         else if (vec.at(i) >= vec.at(i-1)) i++;
@@ -84,6 +84,29 @@ void gnome(std::vector<int> vec){
             std::swap(vec.at(i), vec.at(i-1));
             i--;
         }
+    }
+    show_vec(vec);
+}
+
+void odd_even(std::vector<int> vec){
+    std::cout << "odd-even sort: ";
+    size_t lenght = vec.size();
+    size_t i;
+    bool sorted = false;
+    while(!sorted){
+        sorted = true;
+        for (i = 1; i <= lenght-2; i+=2) {
+            if(vec.at(i) > vec.at(i+1)) { 
+                sorted = false;
+                std::swap(vec.at(i), vec.at(i+1));
+            }
+        } 
+        for (i = 0; i <= lenght-2; i+=2) {
+            if(vec.at(i) > vec.at(i+1)) { 
+                sorted = false;
+                std::swap(vec.at(i), vec.at(i+1));
+            }
+        } 
     }
     show_vec(vec);
 }

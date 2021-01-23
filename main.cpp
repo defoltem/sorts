@@ -9,5 +9,6 @@ int main(){
     selection(vec);
     insertion(vec);
     gnome(vec);
+    odd_even(vec);
     return 0;
 }
