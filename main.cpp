@@ -10,5 +10,6 @@ int main(){
     insertion(vec);
     gnome(vec);
     odd_even(vec);
+    sleep(vec);
     return 0;
 }

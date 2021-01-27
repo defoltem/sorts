@@ -110,3 +110,25 @@ void odd_even(std::vector<int> vec){
     }
     show_vec(vec);
 }
+
+void for_sleep(std::vector<int> &vec, int elm, int &k, bool &last_element){
+    std::this_thread::sleep_for(std::chrono::milliseconds(elm)); // in any negative case - change to seconds
+    vec.at(k) = elm;
+    k++;
+    if (k == vec.size()) last_element = true;
+}
+
+void sleep(std::vector<int> vec){
+    std::cout << "sleep sort: ";
+    int k = 0;
+    bool last_element = false;
+    size_t lenght = vec.size();
+    for(size_t i = 0; i < lenght; i++){
+        std::thread tr(std::bind(for_sleep, std::ref(vec), vec.at(i), std::ref(k), std::ref(last_element)));
+        tr.detach();
+    }
+    while (1) {
+        if (last_element) break;
+        };
+    show_vec(vec);
+}
