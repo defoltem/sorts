@@ -11,5 +11,6 @@ int main(){
     gnome(vec);
     odd_even(vec);
     sleep(vec);
+    cocktail(vec);
     return 0;
 }

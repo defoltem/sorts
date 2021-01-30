@@ -132,3 +132,27 @@ void sleep(std::vector<int> vec){
         };
     show_vec(vec);
 }
+
+void cocktail(std::vector<int> vec){
+    std::cout << "cocktail sort: ";
+    size_t lenght = vec.size();
+    size_t start = 0;
+    bool sorted = false;
+    while(!sorted){
+        sorted = true;
+        for (size_t i = start; i < lenght-1; i++){
+            if (vec.at(i) > vec.at(i+1)){
+                sorted = false;
+                std::swap(vec.at(i), vec.at(i+1));
+            }
+        }
+        if (sorted) break;
+                for (size_t i = lenght; i > start-1; i--){
+            if (vec.at(i) < vec.at(i-1)){
+                sorted = false;
+                std::swap(vec.at(i), vec.at(i-1));
+            }
+        }        
+    };
+    show_vec(vec);
+}

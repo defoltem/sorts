@@ -12,3 +12,4 @@ void insertion(std::vector<int> vec);
 void gnome(std::vector<int> vec);
 void odd_even(std::vector<int> vec);
 void sleep(std::vector<int> vec);
+void cocktail(std::vector<int> vec);
