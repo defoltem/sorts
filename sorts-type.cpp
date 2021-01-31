@@ -156,3 +156,33 @@ void cocktail(std::vector<int> vec){
     };
     show_vec(vec);
 }
+
+int max(std::vector<int> &vec, size_t curr_len){
+    size_t maximum = 0;
+    for(size_t i = 0; i < curr_len; i++){
+        if (vec.at(i) > vec.at(maximum)) maximum = i;
+    }
+    return maximum;
+}
+
+void roll(std::vector<int> &vec, size_t curr_len){
+    size_t start = 0;
+    while(start < curr_len){
+        std::swap(vec.at(curr_len), vec.at(start));
+        start++;
+        curr_len--;
+    }
+}
+
+void pancake(std::vector<int> vec){
+    std::cout << "pancake sort: ";
+    size_t lenght = vec.size();
+    for(;lenght > 1; lenght--){
+        size_t maximum = max(vec, lenght);
+        if (maximum != lenght-1){
+            roll(vec, maximum);
+            roll(vec, lenght-1);
+        }
+    }
+    show_vec(vec);
+}

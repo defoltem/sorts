@@ -12,5 +12,6 @@ int main(){
     odd_even(vec);
     sleep(vec);
     cocktail(vec);
+    pancake(vec);
     return 0;
 }
